@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<!--Initialization Material-->
+	<meta charset="utf-8">
+	<title>Card Selector</title>
+	<!--Load Javascripts-->
+	<script src="jquery-2.2.0.min.js"></script>
+	<script src="JavaScript.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+	<!--Initialization Material-->
+	<script>
+		$(document).ready(function () {
+			fadeManaButtons();
+		});
+	</script>
+	<style>
+		body {
+			background: url("http://www.artofmtg.com/wp-content/uploads/2014/09/Flooded-Strand-MtG-Art.jpg") center no-repeat fixed;
+			background-size: cover;
+			max-height: 100%;
+			max-width: 100%;
+		}
+		.faded {
+			 opacity: 0.6;
+		}
+		.cellContainer {
+			width: 7%;
+			float: left;
+		}
+		.cell {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 1%;
+		}
+		div.transbox {
+			border: 1px solid black;
+			filter: alpha(opacity=60); /* For IE8 and earlier */
+			background-color:rgba(0,0,0,0.4);
+			color: white;
+			height: 20%;
+			width: 50%;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			-webkit-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+		}
+	</style>
+</head>
+<body>
+	<div class="transbox">
+		<div class="cell" id="searchByColor">
+			<div class="cellContainer">
+				<div class="cell">
+					<img class="faded" id="whiteMana" src="http://gatherer.wizards.com/images/Redesign/White_Mana.png" />
+				</div>
+			</div>
+			<div class="cellContainer">
+				<div class="cell">
+					<img class="faded" id="blueMana" src="http://gatherer.wizards.com/images/Redesign/Blue_Mana.png" />
+				</div>
+			</div>
+			<div class="cellContainer">
+				<div class="cell">
+					<img class="faded" id="blackMana" src="http://gatherer.wizards.com/images/Redesign/Black_Mana.png" />
+				</div>
+			</div>
+			<div class="cellContainer">
+				<div class="cell">
+					<img class="faded" id="redMana" src="http://gatherer.wizards.com/images/Redesign/Red_Mana.png" />
+				</div>
+			</div>
+			<div class="cellContainer">
+				<div class="cell">
+					<img class="faded" id="greenMana" src="http://gatherer.wizards.com/images/Redesign/Green_Mana.png" />
+				</div>
+			</div>
+		</div><br />
+		<div class="cell" id="searchByRarity">
+			<div class="cellContainer">
+				<div class="cell">
+					<img class="faded" id="common" src="https://d1zfway5lub0cv.cloudfront.net/icons/expansions/ogw_Common.png" />
+				</div>
+			</div>
+			<div class="cellContainer">
+				<div class="cell">
+					<img class="faded" id="uncommon" src="https://d1zfway5lub0cv.cloudfront.net/icons/expansions/ogw_Uncommon.png" />
+				</div>
+			</div>
+			<div class="cellContainer">
+				<div class="cell">
+					<img class="faded" id="rare" src="https://d1zfway5lub0cv.cloudfront.net/icons/expansions/ogw_Rare.png" />
+				</div>
+			</div>
+			<div class="cellContainer">
+				<div class="cell">
+					<img class="faded" id="mythic" src="https://d1zfway5lub0cv.cloudfront.net/icons/expansions/ogw_Mythic.png" />
+				</div>
+			</div>
+		</div>
+		<br/>
+		<div class="cell">
+			<input type="text" name="text">
+		</div>
+		<div class="cell">
+				<button id="searchButton">Query</button>
+		</div>
+	</div>
+</body>
+</html>
